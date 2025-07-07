@@ -1,15 +1,13 @@
-
-
 function ContributionList({ contributions = [] , goals=[]}) {
   if (!Array.isArray(contributions) || contributions.length === 0) {
-    return <p>No contributions made yet!</p>;
+    return <p style={{textAlign: "center"}}><i>No contributions made yet!</i></p>;
     
   }
   
   return (
-    <div>
-      <h3>Your Contributions</h3>
-      <table border="1" cellPadding="8" cellSpacing="0">
+    <div className="contribution-list-container">
+      <h3 className="contribution-list-title">Your Contributions</h3>
+      <table className="contribution-table">
         <thead>
           <tr>
             <th>Date</th>
@@ -24,7 +22,7 @@ function ContributionList({ contributions = [] , goals=[]}) {
               console.log("Contribution:", contribution);
               console.log("Matched Goal:", matchedGoal);
             return (
-              <tr key={contribution.id}>
+              <tr key={contribution.id} className="contribution-table-row">
                 <td>{contribution.date}</td>
                 <td>{contribution.contributionName}</td>
                 <td>{contribution.contributionAmount.toFixed(2)}</td>

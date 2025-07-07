@@ -29,23 +29,11 @@ function ContributionForm({ contributions = [], setContributions, goals = [] }) 
   }
 
   return (
-    <div>
-      <h2>Contribution</h2>
-      <input
-        type="text"
-        value={contributionName}
-        onChange={(e) => setContributionName(e.target.value)}
-        placeholder="Enter Contribution Name"
-      />
-      $<input
-        type="number"
-        value={contributionAmount}
-        onChange={(e) => setContributionAmount(e.target.value)}
-        placeholder="Enter Contribution Amount"
-      />
+    <div className="contribution-form-container">
+      <h2 style={{color: "#2e4e88"} }>Make a Contribution</h2>
       <div>
-        <label>Select Goal: </label>
-        <select value={selectedGoalId} onChange={(e) => setSelectedGoalId(e.target.value)}>
+        <label>Select Goal: </label><br />
+        <select className="contribution-form-select" value={selectedGoalId} onChange={(e) => setSelectedGoalId(e.target.value)}>
             <option value="" disabled>
                 -- Select a Goal --
             </option>
@@ -56,6 +44,20 @@ function ContributionForm({ contributions = [], setContributions, goals = [] }) 
           ))}
         </select>
       </div>
+      <label>Contribution Amount ($):  </label> <br />
+      <input className="contribution-form-amount"
+        type="number"
+        value={contributionAmount}
+        onChange={(e) => setContributionAmount(e.target.value)}
+        placeholder="Enter Contribution Amount"
+      /> <br />
+      <label>Contribution Description: </label> <br />
+      <input className="contribution-form-input"
+        type="text"
+        value={contributionName}
+        onChange={(e) => setContributionName(e.target.value)}
+        placeholder="Enter Description"
+      />
       <div className="goal-submit">
         <button type="submit" onClick={storeContribution}>
           Save Contribution!

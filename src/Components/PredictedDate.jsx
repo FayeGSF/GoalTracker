@@ -36,9 +36,14 @@ function getPredictedCompletionDate(goal, contributions) {
 
   // Predict completion date
   const predictedDate = new Date(today);
-  predictedDate.setDate(today.getDate() + Math.ceil(daysLeft));
+  predictedDate.setDate(today.getDate());
 
-  return predictedDate.toLocaleDateString();
+  const daysRemaining = Math.ceil(daysLeft)
+
+  return {
+    predictedDate: predictedDate.toLocaleDateString("en-GB").replace(/\//g, '-'),
+    daysRemaining: daysRemaining
+  };
 }
 
 export default getPredictedCompletionDate

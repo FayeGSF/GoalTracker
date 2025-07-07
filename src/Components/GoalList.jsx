@@ -16,11 +16,11 @@ function GoalList ({goals=[], setGoals}){
 
     }
     return ( <>
-    <div>
-        <h2>Goals List</h2>
-        <ol>{goals.map((goal) => (
-            <li key={goal.id}>{goal.name} : ${goal.amount.toFixed(2)}
-            <button id="delete-goal" onClick={()=> deleteGoal(goal.id)}>Delete</button></li>
+    <div className="goal-list-container">
+        <h2 className="goal-list-title" style={{ color: "#2e4e88"}}>Goals List</h2>
+        <ol className="goal-list-items">{goals.map((goal) => (
+            <li className="goal-list-item" key={goal.id}>{goal.name} : ${goal.amount.toFixed(2)}
+            <button className="delete-goal-button" onClick={()=> deleteGoal(goal.id)}>Delete</button></li>
             ))}
             
 

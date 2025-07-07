@@ -34,19 +34,29 @@ function GoalForm({goals =[], setGoals}) {
     }
 
     return (
-    <div>
-
-        
-        <h2> {`Enter your goal below!`} </h2>
-        <h4>Goal Name: </h4>
-        <input type ="text" placeholder ="Goal Name (eg. Laptop)" value ={name} onChange={handleGoal}  />
-        <h4>Amount ($): </h4> 
-        $ <input type ="text" placeholder ="Amount" value = {amount} onChange={handleAmount}  /> <br />
-        <div className="goal-submit">
-            <button type= "submit" onClick={storeGoal}>Save Goal!</button>
+        <div className="goal-form-container">
+          <h2 className="goal-form-title" style={{ color: "#2e4e88"}}>Enter your goal below!</h2>
+          <h4 className="goal-form-label">Goal Name:</h4>
+          <input
+            className="goal-form-input"
+            type="text"
+            placeholder="Goal Name (eg. Laptop)"
+            value={name}
+            onChange={handleGoal}
+          />
+          <h4 className="goal-form-label">Amount ($):</h4>
+          <input
+            className="goal-form-input"
+            type="text"
+            placeholder="Amount"
+            value={amount}
+            onChange={handleAmount}
+          />
+          <div className="goal-submit">
+            <button type="submit" onClick={storeGoal}>Save Goal!</button>
+          </div>
         </div>
-
-    </div>)
+      );
 }
 
 export default GoalForm
