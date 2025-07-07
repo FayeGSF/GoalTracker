@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Link } from 'react-router-dom';
 
 import React, {useState,  useEffect} from 'react';
 import GoalForm from './Components/GoalForm';
@@ -6,6 +6,7 @@ import GoalList from './Components/GoalList';
 import Header from './Components/Header';
 import ContributionPage from './Components/ContributionPage';
 import GoalProgressPage from './Components/GoalProgress';
+import FinancialNews from './Components/FinancialNews'; 
 
 
 function App() {
@@ -40,7 +41,8 @@ function App() {
     <>
       <Header />
       <Routes>
-        <Route path="/" element={<GoalForm goals={goals} setGoals={setGoals} />} />
+        <Route path="/" element={<FinancialNews />} />
+        <Route path="/setgoal" element={<GoalForm goals={goals} setGoals={setGoals} />} />
         <Route
           path="/contribution"
           element={
